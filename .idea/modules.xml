@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/leecode_practice.iml" filepath="$PROJECT_DIR$/.idea/leecode_practice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/practice/practice.iml" filepath="$PROJECT_DIR$/practice/practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/code_practice.iml" filepath="$PROJECT_DIR$/.idea/code_practice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leecode/leecode.iml" filepath="$PROJECT_DIR$/leecode/leecode.iml" />
     </modules>
   </component>
 </project>
