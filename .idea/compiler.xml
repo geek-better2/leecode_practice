@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="leecode" />
+        <module name="facetest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="facetest" target="1.8" />
       <module name="leecode" target="1.8" />
     </bytecodeTargetLevel>
   </component>
