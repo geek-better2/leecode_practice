@@ -8,6 +8,9 @@
       <list>
         <option value="$PROJECT_DIR$/practice/pom.xml" />
         <option value="$PROJECT_DIR$/facetest/pom.xml" />
+        <option value="$PROJECT_DIR$/leecode/pom.xml" />
+        <option value="$PROJECT_DIR$/nettyserver/pom.xml" />
+        <option value="$PROJECT_DIR$/nettyclient/pom.xml" />
       </list>
     </option>
   </component>

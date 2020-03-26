@@ -6,13 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="leecode" />
+        <module name="nettyclient" />
         <module name="facetest" />
+        <module name="nettyserver" />
+        <module name="leecode" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="facetest" target="1.8" />
       <module name="leecode" target="1.8" />
+      <module name="nettyclient" target="1.8" />
+      <module name="nettyserver" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
