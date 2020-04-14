@@ -3,7 +3,7 @@ package com.hai.leecode.sort;
 /**
  * 希尔排序:优化后的插入排序
  */
-public class Shell {
+public class ShellSort {
     public static void main(String[] args) {
         int[] arr = {3, 7, 6, 12, 8, 10};
         int[] sortArr = shellSort(arr);
@@ -21,7 +21,7 @@ public class Shell {
         while (h >= 1) {
             for (int i = h; i < n; i++) {
                 for (int j = i; j >= h && arr[j] < arr[j - h]; j -= h) {
-                    Selection.swapArr(arr, j, j - h);
+                    SelectionSort.swapArr(arr, j, j - h);
                 }
             }
             h = h / 3;

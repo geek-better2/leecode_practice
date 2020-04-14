@@ -6,7 +6,7 @@ package com.hai.leecode.sort;
  * 时间复杂度O（N方），空间复杂度O（N）
  * 受原有顺序影响，最坏情况倒序需要N2/2次比较和N2/2次交换，最好情况是正序有序，只需要N-1次比较，不需要交换
  */
-public class Insertion {
+public class InsertionSort {
     public static void main(String[] args) {
         int[] arr = {3,7,6,12,8,10};
         int[] sortArr = insertSort(arr);
@@ -22,7 +22,7 @@ public class Insertion {
         for (int i = 1; i < n; i++) {
 
             for (int j = i; j > 0 && arr[j] < arr[j-1]; j--) {
-              Selection.swapArr(arr,j,j-1);
+              SelectionSort.swapArr(arr,j,j-1);
             }
         }
         return arr;

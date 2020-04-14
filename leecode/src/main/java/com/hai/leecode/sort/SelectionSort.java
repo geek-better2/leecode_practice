@@ -9,7 +9,7 @@ package com.hai.leecode.sort;
  *  选择排序需要大约N平方/2次比较和N次交换
  *  时间复杂度 O（N平方），空间复杂度O（N）
  */
-public class Selection {
+public class SelectionSort {
     public static void main(String[] args) {
         int[] arr = {3,7,6,12,8,10};
         int[] sortArr = selectSort(arr);
