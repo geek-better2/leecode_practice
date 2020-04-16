@@ -1,56 +1,46 @@
 package com.hai.leecode.sort;
 
-import static jdk.nashorn.internal.objects.Global.print;
-
-/**
- * @author hai
- * @date 2020-04-14 09:38
- */
 public class MergeSort {
-
     public static void main(String[] args) {
-        //int[] arr = {9, 3, 5, 1, 7, 2, 6, 11, 15, 13, 14, 10, 4, 8, 12};
-        int[] arr = {1, 3, 5, 7, 2, 6, 8, 9};
-        mergeSort(arr, 0, arr.length);
+        //int[] arr = {1, 4, 7, 8, 3, 6, 9};
+        int[] arr = {9, 3, 5, 1, 7, 2, 6, 11, 15, 13, 14, 10, 4, 8, 12};
+        sort(arr, 0, arr.length-1);
+        print(arr);
 
-        printArr(arr);
+
     }
 
-    private static void mergeSort(int[] arr, int left, int right) {
-        if (left < right) {
-            int mid = left + (right - left) / 2;
-            //左边排序
-            /*mergeSort(arr, left, mid);
-            //右边排序
-            mergeSort(arr, mid + 1, right);*/
-            merge(arr, left, mid, right);
-        }
+    static void sort(int[] arr, int left, int right) {
+        if(left == right) return;
+        int mid = left + (right - left) / 2;
+        //左边排序
+        sort(arr,left,mid);
+        //右边排序
+        sort(arr,mid+1,right);
+        merge(arr, left, mid + 1, right);
     }
 
-    private static void merge(int[] arr, int left, int mid, int right) {
-        int i = left;
+    static void merge(int[] arr, int leftp, int rightp, int rightBound) {
+        int mid = leftp + (rightBound - leftp) / 2;
+        int[] temp = new int[rightBound - leftp + 1];
+        int i = leftp;
         int j = mid + 1;
         int k = 0;
-
-        int[] temp = new int[arr.length];
-        while (i <= mid && j <= right) {
+        while (i <= mid && j <= rightBound) {
             temp[k++] = arr[i] <= arr[j] ? arr[i++] : arr[j++];
         }
-
         while (i <= mid) temp[k++] = arr[i++];
-        while (j <= right) temp[k++] = arr[j++];
-
+        while (j <= rightBound) temp[k++] = arr[j++];
+        //print(temp);
         for (int l = 0; l < temp.length; l++) {
-            arr[l] = temp[l];
+            arr[leftp + l] = temp[l];
         }
-
     }
 
-
-    private static void printArr(int[] arr) {
+    static void print(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
             System.out.print(arr[i] + " ");
-
         }
     }
+
 }
