@@ -9,15 +9,29 @@ import java.util.Random;
  */
 public class SortCheck {
     public static void main(String[] args) {
-        int[] arr = randomNumber();
-        int[] test = new int[arr.length];
-        for (int i = 0; i < arr.length ; i++) {
-            test[i] = arr[i];
+         boolean result = mutiCheck();
+        System.out.println("对比的结果是：" + result);
+
+
+
+    }
+
+    private static boolean mutiCheck() {
+        boolean result = false;
+        for (int j = 0; j < 1000; j++) {
+            int[] arr = randomNumber();
+            int[] test = new int[arr.length];
+            for (int i = 0; i < arr.length ; i++) {
+                test[i] = arr[i];
+            }
+            Arrays.sort(arr);
+            //MergeSort.sort(test,0,test.length - 1);
+            QuicklySort.quicklySort(test,0,test.length - 1);
+            result = compareSort(arr,test);
+            //System.out.println("对比的结果是:" + result);
+            if( !result) break;
         }
-        Arrays.sort(arr);
-        MergeSort.sort(test,0,test.length - 1);
-        boolean result = compareSort(arr,test);
-        System.out.println("对比的结果是:" + result);
+        return result;
 
     }
 
