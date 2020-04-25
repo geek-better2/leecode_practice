@@ -25,7 +25,7 @@ public class LockNumberPrint {
         public void run() {
             try {
                 lock.lock();
-                while (count <=  100) {
+                while (count <= 97) {
                     while (state % 3 != 0) {
                         A.await();
                     }

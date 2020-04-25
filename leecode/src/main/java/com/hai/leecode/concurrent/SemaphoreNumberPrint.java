@@ -18,7 +18,7 @@ public class SemaphoreNumberPrint {
         @Override
         public void run() {
             try {
-                while (count <= 100) {
+                while (count <= 97) {
                     while (state % 3 != 0) {
                         sem.release();
                     }
