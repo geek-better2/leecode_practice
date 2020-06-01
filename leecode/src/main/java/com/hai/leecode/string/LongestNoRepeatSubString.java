@@ -16,7 +16,7 @@ import java.util.Set;
  * 输入: "bbbbb" 输出: 1 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
  * @date 2020-03-05 10:19
  */
-public class LongestSubString {
+public class LongestNoRepeatSubString {
 
     //方法一、暴力循环法，时间复杂度O(n^3)
     public int lengthOfLongestSubString(String s) {
@@ -24,7 +24,6 @@ public class LongestSubString {
         int ans = 0;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-
                 if (allUnique(s, i, j)) {
                     ans = Math.max(ans, j - i);
                 }
@@ -92,7 +91,7 @@ public class LongestSubString {
 
     public static void main(String[] args) {
         String s = "abckdebf";
-        LongestSubString instance = new LongestSubString();
+        LongestNoRepeatSubString instance = new LongestNoRepeatSubString();
         int temp = instance.lengthOfLongestSubString3(s);
         System.out.println("最长的不重复子串长度为：" + temp);
     }
