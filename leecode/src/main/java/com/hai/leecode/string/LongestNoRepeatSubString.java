@@ -41,34 +41,13 @@ public class LongestNoRepeatSubString {
                 return false;
             }
             c.add(s.charAt(i));
-
-
         }
         return true;
     }
 
-    //方法二、滑动窗口法
-    public int lengthOfLongestSubString2(String s) {
-        int n = s.length();
-        int ans = 0, i = 0;
-        Set<Character> c = new HashSet<>();
-        for (int j = 0; j < n && i < n; j++) {
-            if (!c.contains(s.charAt(j))) {
-                c.add(s.charAt(j));
-                ans = Math.max(ans, j - i);
 
-            } else {
-                c.remove(s.charAt(i));
-                i++;
 
-            }
-
-        }
-        return ans;
-
-    }
-
-    //方法三、优化后的滑动窗口法，增加i的步长
+    //方法二、优化后的滑动窗口法，增加i的步长
     public int lengthOfLongestSubString3(String s) {
         int n = s.length();
         int ans = 0, i = 0;
@@ -87,6 +66,22 @@ public class LongestNoRepeatSubString {
 
 
     }
+
+    //方法三,动态规划 + 哈希表
+    public int lengthOfLongestSubString4(String s) {
+        Map<Character, Integer> dic = new HashMap<>();
+        int res = 0, tmp = 0;
+        for(int j = 0; j < s.length(); j++) {
+            int i = dic.getOrDefault(s.charAt(j), -1); // 获取索引 i
+            dic.put(s.charAt(j), j); // 更新哈希表
+            tmp = tmp < j - i ? tmp + 1 : j - i; // dp[j - 1] -> dp[j]
+            res = Math.max(res, tmp); // max(dp[j - 1], dp[j])
+        }
+        return res;
+
+    }
+
+
 
 
     public static void main(String[] args) {
